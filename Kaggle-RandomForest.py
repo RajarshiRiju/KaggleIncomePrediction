@@ -22,6 +22,9 @@ def calc_smooth_mean(df, by, on, m):
 #Read both dataset and pre-process together
 data_train = pd.read_csv("E:/Trinity/Machine Learning/Kaggle/tcdml1920-income-ind/tcd ml 2019-20 income prediction training (with labels).csv")
 data_test = pd.read_csv("E:/Trinity/Machine Learning/Kaggle/tcdml1920-income-ind/tcd ml 2019-20 income prediction test (without labels).csv")
+
+data_train = data_train.rename(index=str, columns={"Income in EUR" : "Income"})
+
 data = pd.concat([data_train, data_test], sort=False)
 #data.head()
 #len(data)
@@ -36,7 +39,7 @@ data = data.rename(index=str, columns={"Size of City" : "SizeOfCity"})
 data = data.rename(index=str, columns={"University Degree": "UniversityDegree"})
 data = data.rename(index=str, columns={"Wears Glasses" : "WearsGlasses"})
 data = data.rename(index=str, columns={"Hair Color" : "HairColor"})
-data = data.rename(index=str, columns={"Income in EUR" : "Income"})
+#data = data.rename(index=str, columns={"Income in EUR" : "Income"})
 
 #data.YearOfRecord.unique()
 #data.Gender.unique()
